@@ -1,5 +1,9 @@
 import { GeneratedFile } from "./generatedFile.js";
+import { ARXGEN_PLUGIN_API_VERSION, ArxgenPlugin, EntityGenerationContext, PluginCapabilities, PluginMetadata } from "./pluginSdk.js";
 import { EntityConfig, ProjectConfig } from "./projectConfig.js";
+
+export { ARXGEN_PLUGIN_API_VERSION };
+export type { ArxgenPlugin, EntityGenerationContext, PluginCapabilities, PluginMetadata };
 
 export interface GenerationContext {
   config: ProjectConfig;

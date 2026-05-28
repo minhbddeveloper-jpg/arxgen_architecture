@@ -23,6 +23,16 @@ Useful options:
 - `--dry-run`
 - `--force`
 
+External plugin options:
+
+- `--plugin <path-or-package>`
+- `--plugins <comma-separated-paths-or-packages>`
+
+```bash
+arxgen --plugin ./examples/arxgen-plugin.mjs create --name example-api --language example --framework api
+arxgen list plugins --plugin ./examples/arxgen-plugin.mjs
+```
+
 ## Add
 
 ```bash

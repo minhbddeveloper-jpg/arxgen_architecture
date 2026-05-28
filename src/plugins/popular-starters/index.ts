@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { Generator } from "../../core/domain/generator.js";
 import { GeneratedFile } from "../../core/domain/generatedFile.js";
 import { Plugin } from "../../core/domain/plugin.js";
+import { ARXGEN_PLUGIN_API_VERSION } from "../../core/domain/pluginSdk.js";
 import { EntityConfig, EntityFieldConfig, FieldType, ProjectConfig } from "../../core/domain/projectConfig.js";
 import { TemplateRenderer } from "../../core/application/ports/templateRenderer.js";
 import { starterDefinitions } from "./definitions.js";
@@ -50,6 +51,14 @@ export function generateCrudFilesForStack(config: ProjectConfig, pluginName: str
 
 function createStarterPlugin(definition: StarterDefinition, templateRenderer: TemplateRenderer): Plugin {
   return {
+    metadata: {
+      name: definition.name,
+      version: "2.0.0",
+      apiVersion: ARXGEN_PLUGIN_API_VERSION,
+      language: definition.language,
+      framework: definition.framework,
+      description: `Built-in ${definition.language}/${definition.framework} starter`
+    },
     name: definition.name,
     language: definition.language,
     framework: definition.framework,

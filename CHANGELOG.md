@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.0
+
+- Added stable v2 plugin SDK metadata, capability, compatibility, and generation contracts.
+- Added local and npm plugin loading through `--plugin`, `--plugins`, and `ARXGEN_PLUGINS`.
+- Added clear plugin validation and generation error messages.
+- Added plugin development docs, lifecycle notes, capability matrix, and example plugin.
+- Added plugin SDK contract, fixture, snapshot, and compatibility tests.
+
 ## 1.9.0
 
 - Added `--auth-mode production` for generated TypeScript Express JWT auth.

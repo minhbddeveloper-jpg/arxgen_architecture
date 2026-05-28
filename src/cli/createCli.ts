@@ -70,6 +70,7 @@ function printHelp(logger: Logger): void {
 
 Commands:
   create --name <name> --language <language> --framework <framework> [--entity <name>] [--field <entity.field:type>] [--from-sql schema.sql] [--database postgres] [--orm prisma] [--validation zod] [--auth jwt] [--auth-mode production] [--relation course.student:many-to-one] [--redis] [--docker] [--nginx] [--architecture clean] [--config <file>] [--preset saas] [--out <dir>] [--force] [--dry-run]
+  create --plugin <path-or-package> --name <name> --language <language> --framework <framework> [--out <dir>]
   create --name <name> --frontend react --backend express [--database postgres] [--redis] [--docker] [--nginx] [--out <dir>]
   add entity <name> [--field name:type] [--project <dir>] [--validation zod] [--merge] [--force] [--dry-run]
   add crud <name> [--field name:type] [--project <dir>] [--validation zod] [--merge] [--force] [--dry-run]
@@ -77,6 +78,6 @@ Commands:
   upgrade schema --from-sql schema.sql [--project <dir>] [--validation zod] [--dry-run] [--force]
   add usecase <name> [--project <dir>] [--force] [--dry-run]
   wizard
-  list plugins
+  list plugins [--plugin <path-or-package>]
   doctor`);
 }

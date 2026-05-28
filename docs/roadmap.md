@@ -156,6 +156,8 @@ Status: completed for TypeScript Express JWT generation. `--auth-mode production
 
 Goal: stabilize external plugin APIs and multi-stack positioning.
 
+Status: completed in the codebase. arxgen 2.0 loads local and npm plugins through `--plugin`, validates plugin API compatibility, exposes v2 metadata/capability/generation contracts, and includes plugin SDK contract, fixture, snapshot, and compatibility tests.
+
 - Stable plugin API
   - Define plugin metadata, capabilities, and generation contracts
 - External plugin support

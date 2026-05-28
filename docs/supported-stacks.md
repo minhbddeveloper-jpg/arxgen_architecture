@@ -12,5 +12,6 @@
 | Go Gin | Stable scaffold | Partial additive | Struct patching |
 | Ruby Rails | Stable scaffold | Partial additive | Entity accessor patching |
 | Kotlin Ktor | Stable scaffold | Partial additive | Data class patching |
+| External plugins | Stable SDK | Plugin-defined | v2 local/npm plugin contract |
 
 `Stable scaffold` means arxgen consistently generates the expected files and routes. It does not mean the stack has full production database/auth hardening.

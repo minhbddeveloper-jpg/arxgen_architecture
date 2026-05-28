@@ -2,12 +2,15 @@ import { Plugin } from "../../core/domain/plugin.js";
 
 export function formatPlugin(plugin: Plugin): string {
   const capabilities = plugin.capabilities;
+  const version = plugin.metadata?.version ? `@${plugin.metadata.version}` : "";
+  const apiVersion = plugin.metadata?.apiVersion ? ` API ${plugin.metadata.apiVersion}` : "";
+  const header = `${plugin.name}${version} (${plugin.language}/${plugin.framework})${apiVersion}`;
   if (!capabilities) {
-    return `${plugin.name} (${plugin.language}/${plugin.framework})`;
+    return header;
   }
 
   return [
-    `${plugin.name} (${plugin.language}/${plugin.framework})`,
+    header,
     `  CRUD: ${yesNo(capabilities.crud)}`,
     `  ORM: ${formatList(capabilities.orm)}`,
     `  Auth: ${formatList(capabilities.auth)}`,

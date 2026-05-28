@@ -78,7 +78,7 @@ async function readConfigFile(path: string): Promise<Record<string, unknown>> {
 }
 
 function removeCliOnlyOptions(options: CliOptions): Record<string, CliValue> {
-  const { config: _config, out: _out, project: _project, preset: _preset, force: _force, merge: _merge, "save-config": _saveConfig, "dry-run": _dryRun, "from-sql": _fromSql, entity: _entity, field: _field, frontend: _frontend, backend: _backend, ...projectOptions } = options;
+  const { config: _config, out: _out, project: _project, preset: _preset, force: _force, merge: _merge, plugin: _plugin, plugins: _plugins, "save-config": _saveConfig, "dry-run": _dryRun, "from-sql": _fromSql, entity: _entity, field: _field, frontend: _frontend, backend: _backend, ...projectOptions } = options;
   return projectOptions;
 }
 

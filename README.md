@@ -102,6 +102,23 @@ arxgen create \
 
 Generated production auth requires `JWT_SECRET` at runtime.
 
+## Plugin SDK
+
+arxgen 2.0 supports external plugins from local files or installed npm packages:
+
+```bash
+arxgen list plugins --plugin ./examples/arxgen-plugin.mjs
+arxgen --plugin ./examples/arxgen-plugin.mjs create \
+  --name example-api \
+  --language example \
+  --framework api \
+  --entity student \
+  --field name:string \
+  --out ./generated
+```
+
+Plugins expose v2 metadata, capabilities, compatibility checks, and generation hooks. See [Plugin Development](docs/plugin-development.md).
+
 ## Support Status
 
 | Area | Status |
@@ -115,6 +132,7 @@ Generated production auth requires `JWT_SECRET` at runtime.
 | NestJS Prisma | Prisma-backed repository scaffold |
 | NestJS `add entity` | Beta |
 | NestJS schema upgrade | Stable additive support |
+| External plugin SDK | Stable v2 contract with local/npm loading |
 | Other backend CRUD stacks | Stable scaffold |
 | Other backend schema upgrade | Partial additive model/entity support |
 | Docker, Nginx, Redis, CI, logging, OpenAPI | Scaffold |
@@ -200,6 +218,7 @@ arxgen add entity course --field title:string --project ./generated/student-api 
 arxgen add schema --from-sql ./schema.sql --project ./generated/student-api
 arxgen upgrade schema --from-sql ./schema.sql --project ./generated/student-api --dry-run
 arxgen upgrade schema --from-sql ./schema.sql --project ./generated/student-api --force
+arxgen list plugins --plugin ./examples/arxgen-plugin.mjs
 arxgen wizard
 arxgen list plugins
 ```
